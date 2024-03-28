@@ -1,6 +1,6 @@
 # Revision history for cas761interpretor
 
-## 0.1.0.0 -- YYYY-mm-dd
+## 0.1.0.0 -- 2024-03-28
 
 # cas761interpretor
 
@@ -15,6 +15,12 @@ This project implements interpreters for a simple language with the following fe
 * a combinator for computing fixed points 'fix'
 
 The interpreters are implemented in Haskell using the finally tagless style.
+
+There is 4 of them:
+* a usual programming language (i.e. that 'runs') (Interpreter.hs)
+* an interpreter that computes the length of the program (LengthCounterInterpreter.hs)
+* an interpreter that computes (using `Data.Text`) a valid Haskell representation of the program (HaskellInterpreter.hs)
+* an interpreter that computes (using `Data.Text`) a "pretty-printed" version of the program (PrettyPrintInterpreter.hs)
 
 ## Building the project
 
