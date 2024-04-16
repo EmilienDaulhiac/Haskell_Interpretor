@@ -56,9 +56,12 @@ library
 
     -- Modules exported by the library.
     exposed-modules:  Interpreter,
+                    TracingInterpreter,
                   PrettyPrintInterpreter,
                   HaskellInterpreter,
                   LengthCounterInterpreter,
+                  PartialInterpreter,
+                  Compiler,
                   TestSuite
 
     -- Modules included in this library but not exported.
@@ -70,7 +73,8 @@ library
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.17.2.1,
                     HUnit,
-                 text
+                 text,
+                 template-haskell
 
     -- Directories containing source files.
     hs-source-dirs:   src

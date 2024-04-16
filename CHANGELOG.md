@@ -21,7 +21,9 @@ There is 4 of them:
 * an interpreter that computes the length of the program (LengthCounterInterpreter.hs)
 * an interpreter that computes (using `Data.Text`) a valid Haskell representation of the program (HaskellInterpreter.hs)
 * an interpreter that computes (using `Data.Text`) a "pretty-printed" version of the program (PrettyPrintInterpreter.hs)
-
+* a compiler (Compiler.hs)
+* a tracing interpreter (TracingInterpreter.hs)
+* a partial evaluator (PartialInterpreter.hs)
 ## Building the project
 
 To build the project, you will need to have the Haskell Cabal tool installed on your system. Once you have Cabal installed, navigate to the project directory in a terminal and run the following command:
@@ -36,7 +38,16 @@ The project includes a test suite that exercises the interpreters and checks the
 ```
 cabal test
 ```
+or 
+```
+cabal run
+```
 This will run the test suite and print the results to the console.
+
+Also by running some of the Libraries like bellow you can have a view of what the outputs looks like:
+```
+runHaskell PrettyInterpreter.hs
+```
 
 ## Project structure
 
@@ -49,3 +60,9 @@ The project is organized as follows:
 The main entry point for the interpreters is the `src/Interpreter.hs` module, which defines the `Expr` data type and the `ExprAlg` typeclass. The other modules in the `src/` directory define instances of the `ExprAlg` typeclass for the different interpreters.
 
 The test suite is defined in the `test/Test.hs` module, which imports the interpreter modules and defines a set of test cases for each interpreter.
+
+## References
+
+The main basis of all this code was inspired by the [paper](https://okmij.org/ftp/tagless-final/course/lecture.pdf) and this [Github repository](https://github.com/michaelt/tagless/tree/master).  
+
+For the partial evaluator, it is heavily inspired by the work found [here](https://arxiv.org/pdf/1109.0781.pdf).

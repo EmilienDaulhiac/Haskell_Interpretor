@@ -1,7 +1,5 @@
 module Interpreter where
 
-import Test.HUnit
-
 class ExprAlg repr where
   intLit :: Int -> repr Int
   add :: repr Int -> repr Int -> repr Int
